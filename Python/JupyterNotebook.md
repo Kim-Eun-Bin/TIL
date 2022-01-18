@@ -17,4 +17,4 @@ jupyter notebook 실행
 ```
 
 ### 실행화면
-![image](https://user-images.githubusercontent.com/56482682/149945546-450609f6-ba87-4397-aaa2-df7bf26c16ce.png)
+<img src="https://user-images.githubusercontent.com/56482682/149945546-450609f6-ba87-4397-aaa2-df7bf26c16ce.png" width="700" height="300" />
