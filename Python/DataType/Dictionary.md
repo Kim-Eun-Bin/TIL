@@ -39,7 +39,9 @@ Key와 Value의 쌍 여러 개가 {}로 둘러싸여 있습니다. 각각의 요
 딕셔너리에서 Key는 고유한 값이므로 중복되는 Key값을 설정해 놓으면 하나를 제외한 나머지 것들이 모두 무시됩니다.
 
 ### 딕셔너리 함수
+
 - keys()
+
 keys() 함수는 딕셔너리의 Key만을 모아서 dict_keys 객체를 돌려줍니다.
 ```
 >>> a = {'name': 'pey', 'phone': '0119993323', 'birth': '1118'}
@@ -49,6 +51,7 @@ dict_keys(['name', 'phone', 'birth'])
 ```
 
 - values()
+
 values() 함수는 딕셔너리의 Value만을 모아서 dict_values를 돌려줍니다.
 ```
 >>> a = {'name': 'pey', 'phone': '0119993323', 'birth': '1118'}
@@ -58,6 +61,7 @@ dict_values(['pey', '0119993323', '1118'])
 ```
 
 - items()
+
 items() 함수는 Key와 Value의 쌍을 튜플로 묶은 값을 dict_items 객체로 돌려줍니다.
 ```
 >>> a.items()
@@ -66,6 +70,7 @@ dict_items(['name': 'pey', 'phone': '0119993323', 'birth': '1118])
 ```
 
 - clear()
+
 clear() 함수는 딕셔너리 안의 모든 요소를 삭제합니다.
 ```
 >>> a.clear()
@@ -74,6 +79,7 @@ clear() 함수는 딕셔너리 안의 모든 요소를 삭제합니다.
 ```
 
 - get()
+
 get(x) 함수는 x라는 Key에 대응되는 Value를 돌려줍니다.
 ```
 >>> a = {'name': 'pey', 'phone': '0119993323', 'birth': '1118'}
@@ -83,6 +89,7 @@ get(x) 함수는 x라는 Key에 대응되는 Value를 돌려줍니다.
 ```
 
 - in
+
 in을 사용하면 해당 Key가 딕셔너리 안에 있는지에 대한 상태를 bool 값으로 돌려줍니다.
 ```
 >>> a = {'name': 'pey', 'phone': '0119993323', 'birth': '1118'}
