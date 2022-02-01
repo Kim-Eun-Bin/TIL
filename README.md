@@ -1,11 +1,11 @@
 # TIL
 
 ### python
-- program 설치
-- 변수
+- program install
+- dataType
 
 ### java
 
 
 ### swift
-- 변수
+- dataType
