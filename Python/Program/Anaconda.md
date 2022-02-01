@@ -2,6 +2,65 @@
 - [설치 페이지](https://www.anaconda.com/products/individual) <br />
 설치 페이지로 들어가 환경에 맞는 파일을 다운로드 합니다. <br />
 
+### conda 명령어
+
+가상환경 목록 출력
+```
+>> conda env list
+```
+
+가상환경 생성
+```
+>> conda create -n "가상환경이름" python=3.8
+``` 
+
+원하는 가상환경 활성화
+```
+>> conda activate "가상환경이름"
+``` 
+
+실행된 가상환경 비활성화
+```
+>> conda deactivate
+``` 
+
+가상환경 삭제
+```
+>> conda env remove -n "가상환경이름"
+``` 
+
+가상환경에 패키지 설치
+```
+>> pip3 install 패키지명
+``` 
+
+가상환경에 패키지 삭제
+```
+>> pip3 uninstall 패키지명
+``` 
+
+가상환경에 설치된 패키지 확인
+```
+>> pip3 freeze
+``` 
+
+가상환경 익스포트 (배포용 yaml 생성)
+```
+>> conda env export> "가상환경이름.yaml"
+``` 
+
+익스포트한 가상환경 임포트
+```
+>> conda env create -f "가상환경이름.yaml" 
+``` 
+
+터미널 시작시 conda 자동활성화 off
+```
+conda config --set auto_activate_base false
+``` 
+
+base(기본활성화 되는 환경명) : 각자 환경에 맞는 이름으로 변경 필요
+
 ### pycharm에서 가상환경 연동
 
 1. 단축키를 사용해 preference 창을 열어줍니다. <br />
