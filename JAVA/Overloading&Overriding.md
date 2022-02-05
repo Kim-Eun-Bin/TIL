@@ -3,7 +3,7 @@
 ### Overloading
 같은 이름의 메서드 여러개를 가지면서 매개변수의 유형과 개수가 다르도록 하는 것을 말합니다.
 
-```
+```java
 class Test{
     void testmethod(){
         System.out.println("매개변수 없음");
@@ -45,7 +45,7 @@ public class OverLoadingTest {
 상위 클래스가 가지고 있는 멤버변수가 하위 클래스로 상속되는 것처럼 상위 클래스가 가지고 있는 메서드도 하위 클래스로 상속되어 하위 클래스에 사용할 수 있습니다.
 또한, 하위 클래스에서 메서드를 재정의해서도 사용할 수 있는 것을 말합니다.
 
-```
+```java
 class Parent{ //부모클래스
     public String name;
     public String phone;
