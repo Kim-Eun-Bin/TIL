@@ -11,7 +11,7 @@
 
 ### Example
 
-```
+```java
 public class CopiableObject {
   private String name;
   
