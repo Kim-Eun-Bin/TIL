@@ -1,10 +1,1 @@
 # TIL
-
-### python
-
-
-### java
-
-
-### swift
-
