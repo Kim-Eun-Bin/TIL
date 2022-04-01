@@ -19,7 +19,7 @@ MAINTAINER \<writer\>
 - 이미지를 생성한 사람의 정보를 설정합니다. 형식은 자유이며 보통 이름과 이메일을 입력합니다.
 - 현재는 더이상 사용하지 않습니다. (deprecated)
 
-ex) MAINTAINER eunbin <a@b.com>
+ex) MAINTAINER eunbin \<a@b.com\>
 
 ### LABEL
 
@@ -87,6 +87,8 @@ VOLUME <컨테이너 디렉토리> or VOLUME [”컨테이너 디렉토리1”, 
 
 - VOLUME은 컨테이너끼리 데이터를 공유할 수 있습니다.
 - VOLUME으로는 호스트서버의 특정 디렉토리와 연결하도록 설정하는 기능이 없습니다. 만약, 컨테이너의 데이터 볼륨을 호스트의 특정 디렉토리와 연결하려면 docker run -v 옵션을 사용해야합니다.
-    - docker run -v <컨테이너 디렉토리> or docker run -v <호스트 디렉토리>:<컨테이너 디렉토리>
-    - docker volume ls : volume list
-    - docker volume prune : 사용하지 않는 모든 볼륨 삭제 (컨테이너가 없는 볼륨)
+    - docker volume create : 볼륨 생성
+    - docker volume ls : 볼륨 확인
+    - docker volume inspect : 볼륨 상세 정보를 확인
+    - docker volume prune : 컨테이너에서 사용하지 않는 볼륨 모두 삭제하기
+    - docker volume rm : 볼륨 삭제
