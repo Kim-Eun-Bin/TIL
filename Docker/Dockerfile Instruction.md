@@ -1,4 +1,4 @@
-### FROM
+## FROM
 
 FROM \<image\> or FROM \<image\>:\<tag\>
 
@@ -11,7 +11,7 @@ FROM \<image\> or FROM \<image\>:\<tag\>
   
 ex) FROM ubuntu:14.04
 
-### MAINTAINER
+## MAINTAINER
 
 MAINTAINER \<writer\>
 
@@ -21,7 +21,7 @@ MAINTAINER \<writer\>
 
 ex) MAINTAINER eunbin \<a@b.com\>
 
-### LABEL
+## LABEL
 
 컨테이너 이미지에 컨테이너의 정보를 저장합니다.
 
@@ -32,7 +32,7 @@ ex) MAINTAINER eunbin \<a@b.com\>
 - LABEL 명령어 하나에 여러 개를 묶어 사용할 수 있습니다.
 - docker inspect 명령어로 라벨 값을 확인할 수 있습니다.
 
-### RUN
+## RUN
 
 RUN <명령> or RUN ["<실행 파일>", "<매개 변수1>", "<매개 변수2>"]
 
@@ -41,7 +41,7 @@ RUN <명령> or RUN ["<실행 파일>", "<매개 변수1>", "<매개 변수2>"]
 - RUN으로 실행한 결과는 캐시되며 다음 빌드 때 재사용합니다. 캐시된 결과를 사용하지 않으려면 docker build 명령에서 —no-cache 옵션을 사용합니다.
 - 여러 줄로 구성된 RUN 문자를 쿼팅문자인 \를 이용해 여러 줄로 나누는 것은 Dockerfile을 간단하고 해석하기 편하도록 해줍니다.
 
-### CMD
+## CMD
 
 CMD <명령> or CMD["<실행 파일>", "<매개 변수1>", "<매개 변수2>"]
 
@@ -51,7 +51,7 @@ CMD <명령> or CMD["<실행 파일>", "<매개 변수1>", "<매개 변수2>"]
 - Dockerfile에서 한 번만 사용할 수 있습니다. 여러 개 사용될 경우 마지막만 실행됩니다.
 - 어플리케이션 업데이트 및 배치에 사용하고, CMD는 어플리케이션 자체를 실행하는 명령어라고 볼 수 있습니다.
 
-### ENTRYPOINT
+## ENTRYPOINT
 
 ENTRYPOINT <명령> or ENTRYPOINT[”<실행 파일>”, “<매개 변수1>”, “<매개 변수2>”]
 
@@ -59,7 +59,17 @@ ENTRYPOINT <명령> or ENTRYPOINT[”<실행 파일>”, “<매개 변수1>”,
 - Dockerfile에서 단 한번만 사용할 수 있습니다.
 - CMD는 ENTRYPOINT에 설정한 명령에 매개 변수를 전달만 합니다. 명령어 실행은 ENTRYPOINT가 담당하고 CMD는 단순한 인자나 변수만 전달합니다.
 
-### COPY
+### CMD VS ENTRYPOINT
+- CMD와 ENTRYPOINT는 컨테이너가 생성될 때 명령이 실행되는 것은 동일하지만 docker run 명령에서 동작 방식이 다릅니다.
+- 컨테이너를 생성할 때 docker run <이미지> <실행할 명령어 파일> 형식인데, 이미지 다음에 실행할 명령어 파일을 설정할 수 있습니다. docker run 명령에서 실행할 명령어 파일을 설정하면 CMD는 무시됩니다.
+
+## ENV
+ENV <환경 변수> <값>
+- $변수명 : 변수값 대체
+- ENV는 환경 변수를 설정합니다.
+- ENV로 설정한 환경 변수는 RUN, CMD, ENTRYPOINT에 적용됩니다.
+
+## COPY
 
 COPY <복사할 파일 경로> <이미지에서 파일이 위치할 경로>
 
@@ -73,7 +83,7 @@ COPY <복사할 파일 경로> <이미지에서 파일이 위치할 경로>
     
 - COPY로 추가되는 파일은 소유자(UID) 0, 그룹(GID) 0으로 설정되고 permission은 기존 파일의 것을 따릅니다.
 
-### ADD
+## ADD
 
 ADD <복사할 파일 경로> <이미지에서 파일이 위치할 경로>
 
@@ -81,7 +91,7 @@ ADD <복사할 파일 경로> <이미지에서 파일이 위치할 경로>
 - <복사할 파일 경로>는 Dockerfile이 있는 작업 디렉토리인 컨텍스트 아래를 기준으로 하며 컨텍스트 디렉토리의 상위 디렉토리를 지정할 수 없습니다. 절대 경로는 사용할 수 없습니다.
 - <이미지에서 파일이 위치할 경로>는 항상 절대 경로만 사용합니다. 마지막이 /로 끝나면 디렉토리가 생성되고 파일은 그 아래에 복사됩니다.
 
-### VOLUME
+## VOLUME
 
 VOLUME <컨테이너 디렉토리> or VOLUME [”컨테이너 디렉토리1”, “컨테이너 디렉토리2”]
 
